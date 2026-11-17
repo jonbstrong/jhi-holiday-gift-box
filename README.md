@@ -1,6 +1,6 @@
 # Jackson Heights Insider Holiday Gift Box
 
-Astro static landing page for GitHub Pages with Cloudflare DNS. The published page is deliberately in prelaunch mode: requirements in the brief say the product assortment and refund policy must be finalized before checkout is enabled.
+Astro static landing page for GitHub Pages with Cloudflare DNS. Preorders are accepted through the existing Stripe Payment Link.
 
 ## Run locally
 
@@ -9,11 +9,9 @@ npm install
 npm run dev
 ```
 
-## Prepare checkout for launch
+## Checkout and fulfillment
 
-Set `PUBLIC_STRIPE_PAYMENT_LINK` to the approved Stripe Payment Link at build time. Keep `PRELAUNCH_MODE` true in `src/pages/index.astro` until the guaranteed product description, refund/cancellation policy, pickup process, and checkout configuration have been confirmed. Then change it to false and deploy a production build.
-
-The provided Stripe Payment Link is included in the prelaunch configuration for review, but every purchase CTA is disabled while prelaunch mode is on. Inventory limits, multiple-box quantities, required customer fields, tax treatment, confirmation emails, and purchase tracking must be configured and verified in Stripe before launch.
+The `PUBLIC_STRIPE_PAYMENT_LINK` build variable can override the provided Stripe link. All purchase buttons use the same URL. The assortment is still being curated, and preorder customers will receive the final guaranteed contents and relevant product information before pickup. If the box cannot be put together, customers will receive a full refund.
 
 ## GitHub Pages
 
