@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 
-const PRELAUNCH_MODE = true;
 const configuredLink = import.meta.env.PUBLIC_STRIPE_PAYMENT_LINK || 'https://buy.stripe.com/9B6dRbgKG1CYcuh2Kle7m03';
 const checkoutUrl = new URL(configuredLink);
 checkoutUrl.searchParams.set('utm_source', 'giftbox.jacksonheightsinsider.com');
@@ -9,7 +8,7 @@ checkoutUrl.searchParams.set('utm_medium', 'landing_page');
 const title = 'Jackson Heights Holiday Gift Box 2026 | Jackson Heights Insider';
 const description = 'A little box. A whole lot of Jackson Heights. Discover our limited-edition holiday gift box, curated by Jackson Heights Insider. Just 20 available.';
 const faqs = [
-  ['What’s inside?', 'We’re keeping most of the contents a surprise. Each box is curated by Jackson Heights Insider and inspired by the neighborhood. The final product description will outline any guaranteed contents or characteristics before purchases open.'],
+  ['What’s inside?', 'We’re keeping most of the contents a surprise. Each box is curated by Jackson Heights Insider and inspired by the neighborhood. We’ll share the final guaranteed contents and relevant product information with preorder customers before pickup.'],
   ['How much does it cost?', 'Each box costs $89. You can purchase multiple boxes in one order, subject to availability. Applicable taxes, if any, will be displayed at checkout.'],
   ['When will the boxes be ready?', 'We plan to have all boxes available for local pickup before December 24, 2026. We’ll email you with the exact details.'],
   ['Can you ship my box?', 'Not this time. This first edition is available for local pickup in Jackson Heights only.'],
@@ -44,7 +43,7 @@ const faqs = [
     <div class="announcement"><span>HOLIDAY 2026</span><i aria-hidden="true">✳</i><span>JUST 20 BOXES AVAILABLE</span></div>
     <header class="site-header wrap">
       <a class="wordmark" href="https://jacksonheightsinsider.com/" aria-label="Jackson Heights Insider home"><img src="/images/jhi-horizontal-logo.png" alt="Jackson Heights Insider" /></a>
-      <nav aria-label="Main navigation"><a href="#why">The idea</a><a href="#how">How it works</a><a href="#faq">FAQs</a><a class="nav-cta" href="#reserve">{PRELAUNCH_MODE ? 'Coming soon' : 'Reserve a box'}</a></nav>
+      <nav aria-label="Main navigation"><a href="#why">The idea</a><a href="#how">How it works</a><a href="#faq">FAQs</a><a class="nav-cta" href="#reserve">Reserve a box</a></nav>
     </header>
 
     <main>
@@ -53,15 +52,15 @@ const faqs = [
           <p class="eyebrow"><span class="spark">✳</span> INTRODUCING THE JACKSON HEIGHTS HOLIDAY GIFT BOX</p>
           <h1>A little box.<br />A whole lot of <em>Jackson Heights.</em></h1>
           <p class="tagline">Part local discovery. Part holiday surprise. All Jackson Heights.</p>
-          <p class="intro">Looking for a gift with a little more neighborhood personality? We’ve put together a limited-edition holiday surprise inspired by the people, places, and independent businesses that make Jackson Heights special.</p>
-          <div class="hero-buy"><div class="price"><strong>$89</strong><span>per box</span></div>{PRELAUNCH_MODE ? <button class="button button-disabled" type="button" disabled aria-disabled="true">Reserve Your Box <span>↗</span></button> : <a class="button" href={checkoutUrl.toString()} data-cta="primary">Reserve Your Box <span>↗</span></a>}</div>
+          <p class="intro">Looking for a gift with a little more neighborhood personality? We’re putting together a limited-edition holiday surprise inspired by the people, places, and independent businesses that make Jackson Heights special.</p>
+          <div class="hero-buy"><div class="price"><strong>$89</strong><span>per box</span></div><a class="button" href={checkoutUrl.toString()} data-cta="primary">Reserve Your Box <span>↗</span></a></div>
           <p class="reassurance">Limited to 20 boxes <b>·</b> Local pickup <b>·</b> Ready before December 24</p>
         </div>
         <div class="hero-art" aria-label="Conceptual illustration of a neighborhood inspired holiday gift box" role="img">
           <div class="sunburst"></div><div class="mini-star star-one">✳</div><div class="mini-star star-two">✳</div>
           <div class="box-shadow"></div><div class="gift-box"><div class="box-lid"><div class="ribbon"></div><div class="bow bow-left"></div><div class="bow bow-right"></div><div class="bow-knot"></div></div><div class="box-front"><span class="box-stamp">A LITTLE BOX</span><span class="box-jh">JH</span><span class="box-small">A WHOLE LOT OF<br />JACKSON HEIGHTS</span><span class="box-spark">✳</span></div></div>
           <div class="art-caption">A NEIGHBORHOOD SURPRISE <span>✳</span> CONCEPT ART</div>
-          <div class="art-tile tile-a">82<span>ND</span></div><div class="art-tile tile-b">JH<br />NYC</div>
+          <div class="art-tile tile-b">JH<br />NYC</div>
         </div>
       </section>
 
@@ -73,22 +72,20 @@ const faqs = [
         <p class="fine-print">These are the themes behind the gift, not guarantees about individual items.</p>
       </div></section>
 
-      <section class="mystery section-pad"><div class="wrap mystery-layout"><div class="mystery-art" aria-hidden="true"><div class="confetti c1">✳</div><div class="confetti c2">✳</div><div class="open-box"><div class="flap flap-left"></div><div class="flap flap-right"></div><div class="inside"><span>?</span><i>✳</i></div><div class="box-base"><b>THE GOOD STUFF<br />IS A SURPRISE</b></div></div><div class="mystery-label">PEEKING IS RUDE (BUT TEMPTING)</div></div><div class="mystery-copy"><p class="eyebrow">THE BEST PART IS FINDING OUT</p><h2>What’s inside?<br />Now, that would<br />spoil the <em>surprise.</em></h2><p>We’re keeping most of the details under wraps. What we can tell you is that each box is being curated by Jackson Heights Insider, with our neighborhood as the inspiration.</p><p>A little discovery. A little local love. And hopefully a very happy gift recipient.</p><aside class="disclosure"><strong>A note before checkout</strong><br />Contents are not finalized. The final guaranteed assortment and any relevant product information must be confirmed before purchases open.</aside></div></div></section>
+      <section class="mystery section-pad"><div class="wrap mystery-layout"><div class="mystery-art" aria-hidden="true"><div class="confetti c1">✳</div><div class="confetti c2">✳</div><div class="open-box"><div class="flap flap-left"></div><div class="flap flap-right"></div><div class="inside"><span>?</span><i>✳</i></div><div class="box-base"><b>THE GOOD STUFF<br />IS A SURPRISE</b></div></div><div class="mystery-label">PEEKING IS RUDE (BUT TEMPTING)</div></div><div class="mystery-copy"><p class="eyebrow">THE BEST PART IS FINDING OUT</p><h2>What’s inside?<br />Now, that would<br />spoil the <em>surprise.</em></h2><p>We’re keeping most of the details under wraps. What we can tell you is that each box is being curated by Jackson Heights Insider, with our neighborhood as the inspiration.</p><p>A little discovery. A little local love. And hopefully a very happy gift recipient.</p><aside class="disclosure"><strong>A note before checkout</strong><br />We’re still finalizing the assortment. Preorder customers will receive the final guaranteed contents and relevant product information before pickup.</aside></div></div></section>
 
-      <section class="limited section-pad" id="reserve"><div class="wrap limited-inner"><span class="edition-badge">FIRST<br />EDITION<br /><b>2026</b></span><p class="eyebrow">SMALL BATCH, BIG NEIGHBORHOOD</p><h2>Twenty boxes.<br /><em>That’s it.</em></h2><p>We’re keeping our first holiday edition small. Just 20 boxes, available while supplies last.</p><div class="limited-price">$89 <small>per box</small></div>{PRELAUNCH_MODE ? <button class="button button-disabled" type="button" disabled aria-disabled="true">Get Your Holiday Box <span>↗</span></button> : <a class="button" href={checkoutUrl.toString()} data-cta="secondary">Get Your Holiday Box <span>↗</span></a>}<p class="limited-note">No countdowns. No funny business. Just 20 boxes.</p></div><div class="limited-decoration" aria-hidden="true">✳</div></section>
+      <section class="limited section-pad" id="reserve"><div class="wrap limited-inner"><span class="edition-badge">FIRST<br />EDITION<br /><b>2026</b></span><p class="eyebrow">SMALL BATCH, BIG NEIGHBORHOOD</p><h2>Twenty boxes.<br /><em>That’s it.</em></h2><p>We’re keeping our first holiday edition small. Just 20 boxes, available while supplies last.</p><div class="limited-price">$89 <small>per box</small></div><a class="button" href={checkoutUrl.toString()} data-cta="secondary">Get Your Holiday Box <span>↗</span></a><p class="limited-note">No countdowns. No funny business. Just 20 boxes.</p></div><div class="limited-decoration" aria-hidden="true">✳</div></section>
 
       <section class="about section-pad"><div class="wrap about-layout"><img class="about-stamp" src="/images/jhi-logo-badge-solid.png" alt="Jackson Heights Insider round badge logo" /><div><p class="eyebrow">CURATED AROUND THE CORNER</p><h2>From your neighbors at<br /><em>Jackson Heights Insider.</em></h2><p>We spend our days sharing neighborhood stories, discovering local gems, and connecting people with the places that make Jackson Heights so special.</p><p>This holiday season, we thought we’d put a little of that spirit into a box.</p><p class="signature">With love from the neighborhood,<br /><strong>Jackson Heights Insider</strong></p><a class="text-link" href="https://jacksonheightsinsider.com/">Meet us around the neighborhood <span>↗</span></a></div></div></section>
 
       <section class="how section-pad" id="how"><div class="wrap"><div class="center-heading"><p class="eyebrow">THREE LITTLE STEPS</p><h2>Three steps to a more<br /><em>interesting holiday gift.</em></h2></div><div class="steps"><article><span class="step-num">1</span><h3>Reserve</h3><p>Order one or more boxes at $89 each.</p></article><span class="step-arrow">→</span><article><span class="step-num">2</span><h3>We curate</h3><p>We’ll put together your neighborhood-inspired holiday surprise.</p></article><span class="step-arrow">→</span><article><span class="step-num">3</span><h3>Pick up &amp; give</h3><p>Collect your order locally in Jackson Heights before December 24, ready to share with someone special.</p></article></div><p class="pickup-note"><b>LOCAL PICKUP ONLY</b> Exact pickup date, location, and instructions will be emailed to purchasers. Shipping and delivery are not available.</p></div></section>
 
-      <section class="faq section-pad" id="faq"><div class="wrap faq-layout"><div><p class="eyebrow">THE LITTLE DETAILS</p><h2>Good questions.<br /><em>Fair enough.</em></h2><p>Here’s what we know so far. We’ll share the final details before orders open.</p></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}<details class="policy-detail"><summary>What is the cancellation or refund policy?<span>+</span></summary><p>The cancellation and refund policy has not been finalized. Purchases will remain closed until the policy is published here and at checkout.</p></details></div></div></section>
+      <section class="faq section-pad" id="faq"><div class="wrap faq-layout"><div><p class="eyebrow">THE LITTLE DETAILS</p><h2>Good questions.<br /><em>Fair enough.</em></h2><p>Here’s what we know so far. We’ll share the final details with preorder customers before pickup.</p></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}<details class="policy-detail"><summary>What is the cancellation or refund policy?<span>+</span></summary><p>If we’re unable to put the Holiday Gift Box together, we’ll refund your preorder in full. For order questions, email hello@jacksonheightsinsider.com.</p></details></div></div></section>
 
-      <section class="final-cta"><div class="wrap final-inner"><div><p class="eyebrow">A LITTLE NEIGHBORHOOD MAGIC</p><h2>Give a little Jackson Heights<br /><em>this holiday season.</em></h2><p>One neighborhood. Twenty boxes. Plenty of holiday surprises.</p></div><div class="final-buy"><div><strong>$89</strong><span>per box</span></div>{PRELAUNCH_MODE ? <button class="button button-disabled" type="button" disabled aria-disabled="true">Reserve Your Box <span>↗</span></button> : <a class="button" href={checkoutUrl.toString()} data-cta="primary">Reserve Your Box <span>↗</span></a>}<small>Secure payment through Stripe · Local pickup only</small></div></div></section>
+      <section class="final-cta"><div class="wrap final-inner"><div><p class="eyebrow">A LITTLE NEIGHBORHOOD MAGIC</p><h2>Give a little Jackson Heights<br /><em>this holiday season.</em></h2><p>One neighborhood. Twenty boxes. Plenty of holiday surprises.</p></div><div class="final-buy"><div><strong>$89</strong><span>per box</span></div><a class="button" href={checkoutUrl.toString()} data-cta="primary">Reserve Your Box <span>↗</span></a><small>Secure payment through Stripe · Local pickup only</small></div></div></section>
     </main>
     <footer class="footer"><div class="wrap footer-main"><a class="wordmark footer-logo" href="https://jacksonheightsinsider.com/"><img src="/images/jhi-horizontal-logo.png" alt="Jackson Heights Insider" /></a><p>A little neighborhood pride.<br />A little mystery. A lot of love.</p><nav aria-label="Footer"><a href="https://jacksonheightsinsider.com/">Main website</a><a href="mailto:hello@jacksonheightsinsider.com">Contact</a><a href="https://jacksonheightsinsider.com/privacy-policy/">Privacy</a><a href="#faq">Terms &amp; refund info</a></nav></div><div class="wrap footer-bottom"><span>© 2026 Jackson Heights Insider</span><span>Made with love in Jackson Heights, Queens <b>✳</b></span></div></footer>
-    {PRELAUNCH_MODE && <div class="launch-strip" role="status"><span>HOLIDAY BOX PRELAUNCH</span><span>Orders open after product &amp; policy details are finalized</span></div>}
   </body>
 </html>
 
-{PRELAUNCH_MODE && <div class="sr-only" aria-live="polite">Purchases are not yet available.</div>}
 
