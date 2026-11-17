@@ -1,0 +1,5 @@
+{
+  "compilerOptions": { "allowJs": true, "jsx": "react-jsx", "moduleResolution": "bundler", "strict": true, "target": "ES2022", "types": ["astro/client"] },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
+}
